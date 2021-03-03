@@ -4,7 +4,7 @@
         <div slot="header" class="card-header">
           <h2 class="article-title">{{item.article_tilte}}</h2>
           <div class="article-info">
-            <span class="author"><i class="el-icon-s-custom"></i>{{item.user_name}}</span>
+            <span><i class="el-icon-s-custom"></i><span class="author"> {{item.user_name}}</span></span>
             <span><i class="el-icon-date"></i>{{item.last_update_time}}</span>
             <span><i class="el-icon-view"></i>{{item.article_comment_count}}</span>
           </div>
@@ -47,12 +47,25 @@
           {
             article_id: "2",
             user_id: "232",
-            user_name: "howe",
+            user_name: "废铁",
             article_tilte: " 如何根据系统主题自动响应CSS深色模式",
             article_image: "https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200427163531.jpg",
             article_content: "很多人喜欢选择APP或网站中的深色模式，也许他们更喜欢这样的外观，或者他们想让自己的眼睛免受疲劳。这篇文章将告诉你如何在网站中实现一个自动的CSS深色模式，根据访客的系统主题来自动响应。",
             article_views: 10,
             article_comment_count: 12,//评论总数
+            article_create_date: "2020-03-28",//博客发表时间
+            last_update_time: "2020-03-28",//最新更新时间
+            article_like_count: 50,//博客点赞数
+          },
+          {
+            article_id: "2",
+            user_id: "232",
+            user_name: "cassie",
+            article_tilte: " ansible自动搭建elasticsearch集群",
+            article_image: "https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200427163531.jpg",
+            article_content: "基于ansible自动部署java环境，redis5.0.5集群，elasticsearch6.3.1集群；完整的安装部署包我将上传到Github，需要的朋友可以给个Start哟",
+            article_views: 120,
+            article_comment_count: 1312,//评论总数
             article_create_date: "2020-03-28",//博客发表时间
             last_update_time: "2020-03-28",//最新更新时间
             article_like_count: 50,//博客点赞数
@@ -118,10 +131,17 @@
                   margin-right: 12px;
                 }
                 &.author{
+                  display: inline-block;
+                  margin-left: 5px;
                   &:hover{
                     cursor: pointer;
-                  color: $color-main;
-                  font-weight:600;
+                    color: $color-main;
+                    -webkit-transform: scale(1.1, 1.1);
+                    -moz-transform: scale(1.1, 1.1);
+                    -o-transform: scale(1.1, 1.1);
+                    -ms-transform: scale(1.1, 1.1);
+                    transform: scale(1.1, 1.1);
+                    transition: all .4s;
                   }
                 }
               }
@@ -147,6 +167,7 @@
               -webkit-line-clamp: 2;
               line-clamp: 2;
               -webkit-box-orient: vertical;
+              padding-top:10px;
             }
           }
         }

@@ -26,11 +26,11 @@ module.exports = {
   // 请求代理
   devServer: {
     proxy: {
-      '/blogWeb': {
+      '/api': {
         target: 'http://8.129.110.202:1002',
         changeOrigin: true,
         pathRewrite: {
-          '^/blogWeb': 'http://8.129.110.202:1002' //路径重写
+          '^/api': 'http://8.129.110.202:1002' //路径重写
         }
       },
     }

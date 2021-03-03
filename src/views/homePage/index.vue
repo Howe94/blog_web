@@ -88,6 +88,7 @@
       box-sizing: border-box;
       position: relative;
       overflow: auto;
+      padding-bottom: 50px;
       background: url("~@/assets/images/blog-bg.png") center center / cover no-repeat;
 
       .main-content {
