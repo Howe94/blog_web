@@ -313,7 +313,7 @@
 .el-loading-spinner {
 	width: 30px;
 	height: 30px;
-	background: url(~@/assets/img/loading.gif) no-repeat;
+	background: url(~@/assets/images/loading.gif) no-repeat;
 	background-size: contain;
 	position: absolute;
 	left: 50%;
@@ -479,7 +479,7 @@ i.el-cascader-node__postfix {
 }
 .md-notify-info-icon{
     display: inline-block;
-    background: url("~@/assets/img/md-notify-info.svg") no-repeat;
+    background: url("~@/assets/images/notify-info.svg") no-repeat;
     width: 16px;
     height: 16px;
     vertical-align: bottom;

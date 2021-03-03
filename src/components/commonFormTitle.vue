@@ -43,7 +43,7 @@ export default {
     line-height: 24px;
     padding-left: 14px;
     position: relative;  
-    color: $color-dominant;
+    color: $color-main;
     font-weight: 600;
     &::after {
       content: ' ';
@@ -52,7 +52,7 @@ export default {
       left: 0;
       width: 4px;
       height: 15px;
-      background-color: $color-background-2;
+      background-color: $color-bg-3;
     }
   }
   .form-title-icon {
@@ -60,7 +60,7 @@ export default {
     line-height: 24px;
     font-size: 14px;
     font-weight: 600;
-    color: $color-dominant;
+    color: $color-main;
     padding-left: 26px;
     position: relative;
     .common-title-icon {

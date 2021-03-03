@@ -1,0 +1,72 @@
+// 引入重置样式
+@import './reset.scss';
+
+// 引入重置element的部分样式
+@import './element-reset.scss';
+// 外边距
+// 10px
+.mt10 {
+  margin-top: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+// 20px
+.mt20 {
+  margin-top: 20px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+// 40px
+.mt40 {
+  margin-top: 40px;
+}
+.mr40 {
+  margin-right: 40px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.ml40 {
+  margin-left: 40px;
+}
+// 内边距
+// 10px
+.pt10 {
+  padding-top: 10px;
+}
+.pr10 {
+  padding-right: 10px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.pl10 {
+  padding-left: 10px;
+}
+// 20px
+.pt20 {
+  padding-top: 20px;
+}
+.pr20 {
+  padding-right: 20px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+.pl20 {
+  padding-left: 20px;
+}
