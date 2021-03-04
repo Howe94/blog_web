@@ -22,9 +22,13 @@
         </div>
         <!-- 用户信息 -->
         <div class="header-user">
+          <div class="write-article mr20">
+            <el-button type="primary" round><i class="iconfont blog-icon-write-article mr10"></i>写文章</el-button>
+          </div>
+
           <!-- 未登录，及游客展示的 -->
-          <div class="unsign-up" v-if="isLogin">
-            <el-button type="primary" round>登录</el-button>
+          <div class="unsign-up" v-if="!isLogin">
+            <el-button round>登录</el-button>
             <el-button type="warning" round>注册</el-button>
           </div>
           <!-- 已登录用户展示的信息 -->
@@ -61,6 +65,10 @@
         searchTip: "", //搜索的关键字
         tabList: [
           {
+            tabId:"0",
+            tabName:"首页"
+          },
+          {
             tabName: "前端",
             tabId: "1"
           },
@@ -77,7 +85,7 @@
             tabId: "4"
           }
         ],
-        selectTabId: "1",//默认选中第一个
+        selectTabId: "0",//默认选中第一个
         userSettingsList:[
           {
             command: 'password',
@@ -224,9 +232,17 @@
         /* 用户和游客样式 */
         .header-user {
           vertical-align: middle;
-          .unsign-up {
+          .write-article,.unsign-up,.sign-up{
+            display: inline-block;
             .el-button.is-round {
               padding: 8px 14px;
+            }
+          }
+          .write-article{
+            .el-button{
+              border: none;
+              font-size: 18px;
+              font-weight: 500;
             }
           }
           .sign-up{

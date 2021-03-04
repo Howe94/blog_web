@@ -4,7 +4,7 @@ import RouterGuide from '@/utils/routerGuide.js';
 const routes = [
   /*博客首页*/
   {
-    path: '/index',
+    path: '/',
     name: 'index',
     component: resolve => {
       require.ensure(['@/views/homePage/index.vue'], () => {

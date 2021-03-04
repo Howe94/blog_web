@@ -35,7 +35,7 @@ module.exports = {
       },
     }
   },
-  lintOnSave: true, // 关闭eslint检查
+  lintOnSave: false, // 关闭eslint检查
   chainWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // js,css代码的最小化压缩

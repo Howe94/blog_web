@@ -1,23 +1,26 @@
 <template>
-    <div class="home-page-boxes bg">
-      <div class="main-content">
-        <!--顶部的内容-->
-        <main-top></main-top>
-        <!--博客内容-->
-        <common-body isColumn :rightWidth="'380px'">
-          <template slot="left">
-            <div class="content-left">
-              <article-box></article-box>
-            </div>
-          </template>
-          <template slot="right">
-            <div class="content-right">
-              <recommend-box></recommend-box>
-            </div>
-          </template>
-        </common-body>
-      </div>
+  <div class="home-page-boxes bg">
+    <div class="main-content">
+      <!--顶部的内容-->
+      <main-top></main-top>
+      <!--博客内容-->
+      <common-body isColumn :rightWidth="'380px'">
+        <template slot="left">
+          <div class="content-left">
+            <article-box></article-box>
+          </div>
+        </template>
+        <template slot="right">
+          <div class="content-right">
+            <!--展示用户的信息-->
+            <user-recommend-box v-if="isLogin"></user-recommend-box>
+            <!--未登录信息-->
+            <recommonend-box v-else></recommonend-box>
+          </div>
+        </template>
+      </common-body>
     </div>
+  </div>
 </template>
 
 <script>
@@ -25,15 +28,19 @@
   import mainTop from "./commonModel/mainTop";
   import commonBody from "@/components/commonBody";
   import articleBox from "./commonModel/articleBox";
-  import recommendBox from "./commonModel/recommendBox"
+  import userRecommendBox from "./commonModel/userRecommendBox";
+  import recommonendBox from "./commonModel/recommonendBox.vue";
   import * as Service from "./service.js";
+
 
   export default {
     name: "homePage",
     data() {
-      return {};
+      return {
+        isLogin: false,//是否登录
+      };
     },
-    components: {mainTop,commonBody,articleBox,recommendBox},
+    components: {mainTop, commonBody, articleBox, recommonendBox, userRecommendBox},
     watch: {},
 
     filters: {},
@@ -82,18 +89,18 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-    .home-page-boxes {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      position: relative;
-      overflow: auto;
-      padding-bottom: 50px;
-      background: url("~@/assets/images/blog-bg.png") center center / cover no-repeat;
-
-      .main-content {
-        text-align: center;
-      }
-
+  .home-page-boxes {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto;
+    padding-bottom: 50px;
+    background-image: url("~@/assets/images/blog-bg.png");
+    //background:  center center / cover no-repeat;
+    .main-content {
+      text-align: center;
     }
+
+  }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="recommend-box">
+  <div class="user-recommend-box">
     <!-- 右侧信息  登录用户的信息-->
     <div class="sign-up-info recommend-item">
       <common-form-title title="关于我"></common-form-title>
@@ -40,7 +40,7 @@
   import commonFormTitle from "@/components/commonFormTitle";
 
   export default {
-    name: "recommendBox",
+    name: "userRecommendBox",
     props: {},
     data() {
       return {
@@ -153,7 +153,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  .recommend-box {
+  .user-recommend-box {
     .recommend-item {
       padding: 10px;
       background: $color-bg-2;
@@ -181,10 +181,10 @@
       .article_info {
         text-align: left;
         p{
-          color: $color-primary;
+          color: $color-main;
           padding:5px;
           span{
-            color: $color-success;
+            color: $color-primary;
             &:hover{
               cursor: pointer;
               font-weight: 600;
