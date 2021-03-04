@@ -96,8 +96,7 @@
     position: relative;
     overflow: auto;
     padding-bottom: 50px;
-    background-image: url("~@/assets/images/blog-bg.png");
-    //background:  center center / cover no-repeat;
+    background: url("~@/assets/images/blog-bg.png") center center / cover no-repeat;
     .main-content {
       text-align: center;
     }

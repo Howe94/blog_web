@@ -7,8 +7,8 @@ const routes = [
     path: '/',
     name: 'index',
     component: resolve => {
-      require.ensure(['@/views/homePage/index.vue'], () => {
-        resolve(require('@/views/homePage/index.vue'));
+      require.ensure(['@/pages/homePage/index.vue'], () => {
+        resolve(require('@/pages/homePage/index.vue'));
       }, 'chunk/homePage');
     },
     meta: {
@@ -19,9 +19,9 @@ const routes = [
 ]
 const router = new Router({
   base: process.env.BASE_URL,
-  routes: routes
+  routes
 });
-
+console.log("路由的配置process.env.BASE_URL=====>",process.env.BASE_URL)
 let routerGuide = new RouterGuide(router);
 routerGuide.initRouterGuide();
 

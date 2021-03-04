@@ -4,6 +4,7 @@ const path = require("path");
 function resolve (dir) {
   return path.join(__dirname, dir);
 }
+
 // 引入插件
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const Happypack = require('happypack');
@@ -18,7 +19,7 @@ module.exports = {
     index: {
       entry: 'src/entry/main.js',
       template: 'public/index.html',
-      filename: 'index.html',
+      filename: 'homePage.html',
       title: '技术大脑',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }

@@ -3,6 +3,8 @@ const fs = require("fs");
 let path = require('path');
 let pages = {};
 let fileObj = {
+  homePage:'首页',
+  signInUp:'登录注册'
 };
 
 // 引入依赖模块
@@ -48,5 +50,5 @@ function findDirDepSync(pathName, fileName) {
 }
 
 // 调用
-findDirDepSync("src/views", 'pages');
+findDirDepSync("src/pages", 'pages');
 module.exports = pages;
