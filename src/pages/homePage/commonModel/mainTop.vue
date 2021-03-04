@@ -1,7 +1,7 @@
 <template>
   <div i="main-top-index">
     <div class="content-top">
-      <h1 class="content-title">TechnologyBrain's Blog </h1>
+      <h1 class="content-title">TechnologyBrain's Blog</h1>
       <p class="description">IT技术博客，大道至简，砥砺前行</p>
       <div class="recommends">
         <div class="recommend">

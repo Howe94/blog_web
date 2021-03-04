@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-账号-sel@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="环节管理" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0-登录页--icon状态" transform="translate(-648.000000, -263.000000)">
+            <g id="分组-5-copy-5" transform="translate(454.000000, 138.000000)">
+                <g id="icon-账号-nor备份" transform="translate(194.000000, 125.000000)">
+                    <g id="icon-账号-sel">
+                        <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="30" height="30" rx="1"></rect>
+                        <ellipse id="Oval" stroke="#254CCA" stroke-width="2" cx="16.1538462" cy="15.5555556" rx="12.6923077" ry="12.2222222"></ellipse>
+                        <ellipse id="Oval-2" stroke="#254CCA" stroke-width="2" cx="16.1538462" cy="12.2222222" rx="4.61538462" ry="4.44444444"></ellipse>
+                        <path d="M10.3846154,22.3402857 C10.68481,18.8233607 12.32637,16.9429059 15.3092953,16.6989211 C19.7836833,16.3329439 21.9572227,19.1358452 22.2762855,22.3402857" id="Path-3" stroke="#254CCA" stroke-width="2"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
