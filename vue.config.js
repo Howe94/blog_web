@@ -4,6 +4,7 @@ const path = require("path");
 function resolve (dir) {
   return path.join(__dirname, dir);
 }
+console.log("获取的页面有=====》",pages);
 
 // 引入插件
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");

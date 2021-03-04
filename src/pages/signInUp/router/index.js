@@ -10,7 +10,7 @@ const routes = [
     component: resolve => {
       require.ensure(['../views/signIn.vue'], () => {
         resolve(require('../views/signIn.vue'));
-      }, 'chunk/signIn');
+      }, 'signIn');
     },
     meta: {
       title: '登录',
@@ -24,7 +24,7 @@ const routes = [
     component: resolve => {
       require.ensure(['../views/signUp.vue'], () => {
         resolve(require('../views/signUp.vue'));
-      }, 'chunk/signIn');
+      }, 'signUp');
     },
     meta: {
       title: '注册',

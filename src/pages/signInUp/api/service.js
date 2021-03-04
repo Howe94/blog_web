@@ -5,7 +5,7 @@ const checkFunc = (func) => {
 };
 
 export function getToken(data, type, callFunc) {
-  const options = checkFunc(callFunc) ? [data, 'get', callFunc] : [data, 'get'];
+  const options = checkFunc(callFunc) ? [data, type, callFunc] : [data, type];
   let url = '/api/token/getToken';
   return fetchData(url, ...options);
 }

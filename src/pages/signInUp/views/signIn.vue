@@ -55,10 +55,10 @@
           <el-button type="primary" @click="login()">立即登录</el-button>
         </li>
         <li class="login-tips">
-          <i class="icon-tips"></i>“忘记账号/密码、账号被禁用”无法登录的，请联系管理员。
+          <i class="icon-tips mr10"></i>“忘记账号/密码、账号被禁用”无法登录的，请联系管理员。
         </li>
         <li class="sign-up-tips">
-          <i class="icon-tips"></i>如若还没有账户信息，前往<span>注册</span>
+          <i class="iconfont blog-icon-sign-up-tip mr10"></i>如若还没有账户信息，前往<span class="sign-up" @click="signUp">注册</span>
         </li>
       </ul>
     </div>
@@ -71,7 +71,7 @@
   } from "@/utils/utils";
   import {
     getToken
-  } from "../service";
+  } from "../api/service";
   // 消息通知
   import * as Msg from '@/utils/notify.js';
   export default {
@@ -123,6 +123,16 @@
           console.log(err);
         });
       },
+      //注册
+      signUp(){
+        const that = this;
+        that.$router.push({
+          path:"signUp",
+          query:{
+            userName:that.form.username
+          }
+        })
+      }
     },
     created() {
       this.keyupSubmit();
@@ -139,10 +149,11 @@
     position: fixed;
 
     .login-main {
-      border-radius: 4px;
-      width: 458px;
+      border-radius: 50% 0px 50% 0px;
+      width: 658px;
       height: 400px;
-      background: rgba(255, 255, 255, 1);
+      /* background: rgba(255, 255, 255, 1); */
+      background:#00000090;
       box-shadow: 0px 3px 6px 0px rgba(139, 139, 139, 0.5);
       margin: auto;
       position: relative;
@@ -292,24 +303,6 @@
         }
       }
 
-      .login-code {
-        margin-bottom: 30px;
-
-        .el-input {
-          width: 203px;
-        }
-
-        .code-img {
-          width: 115px;
-          height: 41px;
-          vertical-align: middle;
-          display: inline-block;
-          background: rgba(233, 233, 233, 1);
-          margin-left: 15px;
-          cursor: pointer;
-        }
-      }
-
       .login-btn {
         margin-bottom: 30px;
         padding: 0 44px;
@@ -338,7 +331,10 @@
         }
       }
       .sign-up-tips{
-
+        .sign-up{
+          cursor: pointer;
+          color:$color-primary;
+        }
       }
     }
   }

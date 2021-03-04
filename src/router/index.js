@@ -9,7 +9,7 @@ const routes = [
     component: resolve => {
       require.ensure(['@/pages/homePage/index.vue'], () => {
         resolve(require('@/pages/homePage/index.vue'));
-      }, 'chunk/homePage');
+      }, 'homePage');
     },
     meta: {
       title: '主页',

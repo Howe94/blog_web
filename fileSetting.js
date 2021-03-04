@@ -4,7 +4,6 @@ let path = require('path');
 let pages = {};
 let fileObj = {
   homePage:'首页',
-  signInUp:'登录注册'
 };
 
 // 引入依赖模块
