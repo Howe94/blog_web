@@ -3,16 +3,15 @@
     <div class="login-main">
       <div class="login-title">TechnologyBrain's Blog</div>
       <!--禁用自动填充密码-->
-      <input type="text" name="username" style="display:none;" />
-      <input type="password" name="password" style="display:none;" />
-      <ul>
+      <ul class="login-body">
         <li>
         <span class="login-icon">
-          <i :class="[
+          <!-- <i :class="[
                 'icon-user icon-user-nor',
                 { 'icon-user-sel': form.username || userCheck == 1 },
                 { 'icon-user-wrong': userCheck == 0 },
-              ]"></i>
+              ]"></i> -->
+              <svg-icon iconClass="icon-user" className='mr10'></svg-icon>
         </span>
           <el-input placeholder="账号" v-model="form.username" :class="[
               { 'right-mess': form.username || userCheck == 1 },
@@ -34,6 +33,7 @@
                 { 'icon-password-sel': form.password || passCheck == 1 },
                 { 'icon-password-wrong': passCheck == 0 },
               ]"></i>
+
         </span>
           <el-input type="password" placeholder="密码" v-model="form.password" :class="[
               { 'right-mess': form.password || passCheck == 1 },
@@ -58,7 +58,7 @@
           <i class="icon-tips mr10"></i>“忘记账号/密码、账号被禁用”无法登录的，请联系管理员。
         </li>
         <li class="sign-up-tips">
-          <i class="iconfont blog-icon-sign-up-tip mr10"></i>如若还没有账户信息，前往<span class="sign-up" @click="signUp">注册</span>
+          <i class="iconfont blog-icon-sign-up-tip mr10"></i><i class="iconfont blog-icon-user mr10"></i>如若还没有账户信息，前往<span class="sign-up" @click="signUp">注册</span>
         </li>
       </ul>
     </div>
@@ -152,20 +152,21 @@
       border-radius: 50% 0px 50% 0px;
       width: 658px;
       height: 400px;
-      /* background: rgba(255, 255, 255, 1); */
       background:#00000090;
       box-shadow: 0px 3px 6px 0px rgba(139, 139, 139, 0.5);
       margin: auto;
       position: relative;
       top: 50%;
       margin-top: -246px;
-
       .login-title {
         font-size: 28px;
         font-weight: 400;
-        color: $color-font-title;
+        color: $color-primary;
         padding: 34px 0 35px;
         line-height: 40px;
+        text-align: center;
+      }
+      .login-body{
         text-align: center;
       }
 

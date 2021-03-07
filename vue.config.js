@@ -2,7 +2,7 @@ const assetsPublicPath = process.env.NODE_ENV === 'production' ? '/blogWeb/' : '
 let pages = require('./fileSetting');
 const path = require("path");
 function resolve (dir) {
-  return path.join(__dirname, dir);
+  return path.join(__dirname, './', dir);
 }
 console.log("获取的页面有=====》",pages);
 
