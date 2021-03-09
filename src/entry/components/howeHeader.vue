@@ -9,7 +9,6 @@
       <!--      头部标签-->
       <div class="header-tab">
         <div class="tab-search-input">
-          <svg-icon iconClass="icon-user" className='mr10'></svg-icon>
           <el-input placeholder="请输入搜索的内容" prefix-icon="el-icon-search" v-model="searchTip">
           </el-input>
         </div>
@@ -55,6 +54,7 @@
 </template>
 
 <script>
+  // import '@/assets/svg/icon-user.svg'
   export default {
     name: "howeHeader",
     data() {

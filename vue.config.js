@@ -58,6 +58,11 @@ module.exports = {
     } else {
       // 为开发环境修改配置...
     }
+    config.plugin("define").tap(args => {
+      args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL);
+      return args;
+    });
+    // svg配置
     // svg配置
     config.module.rules.delete('svg'); //重点:删除默认配置中处理svg,
     config.module
@@ -82,8 +87,6 @@ module.exports = {
           name: 'img/[name].[hash:7].[ext]',
           publicPath: assetsPublicPath
         });
-    // 项目中使用引入文件有时候路径比较深，需要使用"../../../xx.js"这种类似的路劲引入，这种方式比较笨，可以使用webpack的别名alias配置来解决。
-    config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js');
   },
   //Webpack
   configureWebpack: config => {
@@ -109,12 +112,6 @@ module.exports = {
           threads: 3 // 线程数取决于你电脑性能的好坏，好的电脑建议开更多线程
         })
     );
-  },
-  chainWebpack: config => {
-    config.plugin("define").tap(args => {
-      args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL);
-      return args;
-    });
   },
   css: {
     // 不用在每一个页面都进行引入样式，就能直接引用。

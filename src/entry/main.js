@@ -6,6 +6,7 @@ import VueRouter from 'vue-router'
 /* ElementUI */
 import ElementUI from 'element-ui'
 // 全局注册svg组件
+// 全局注册svg组件
 import '@/components/svgIcon';
 
 import 'element-ui/lib/theme-chalk/index.css';
