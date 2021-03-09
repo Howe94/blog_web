@@ -58,6 +58,10 @@ module.exports = {
     } else {
       // 为开发环境修改配置...
     }
+    config.plugin("define").tap(args => {
+      args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL);
+      return args;
+    });
     // svg配置
     config.module.rules.delete('svg'); //重点:删除默认配置中处理svg,
     config.module
@@ -109,12 +113,6 @@ module.exports = {
           threads: 3 // 线程数取决于你电脑性能的好坏，好的电脑建议开更多线程
         })
     );
-  },
-  chainWebpack: config => {
-    config.plugin("define").tap(args => {
-      args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL);
-      return args;
-    });
   },
   css: {
     // 不用在每一个页面都进行引入样式，就能直接引用。

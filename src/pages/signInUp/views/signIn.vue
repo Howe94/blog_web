@@ -5,13 +5,10 @@
       <!--禁用自动填充密码-->
       <ul class="login-body">
         <li>
-        <span class="login-icon">
-          <!-- <i :class="[
-                'icon-user icon-user-nor',
-                { 'icon-user-sel': form.username || userCheck == 1 },
-                { 'icon-user-wrong': userCheck == 0 },
-              ]"></i> -->
-              <svg-icon iconClass="icon-user" className='mr10'></svg-icon>
+        <span class="login-icon">              
+          <svg-icon v-if="form.username || userCheck == 1" iconClass="icon-user-sel" className='icon-item'></svg-icon>
+          <svg-icon v-else-if="userCheck == 0" iconClass="icon-user-wrong" className='icon-item'></svg-icon>
+          <svg-icon v-else iconClass="icon-user-nor" className='icon-item'></svg-icon>
         </span>
           <el-input placeholder="账号" v-model="form.username" :class="[
               { 'right-mess': form.username || userCheck == 1 },
@@ -28,12 +25,9 @@
         </li>
         <li>
         <span class="login-icon">
-          <i :class="[
-                'icon-password icon-password-nor',
-                { 'icon-password-sel': form.password || passCheck == 1 },
-                { 'icon-password-wrong': passCheck == 0 },
-              ]"></i>
-
+              <svg-icon v-if="form.password || userCheck == 1" iconClass="icon-password-sel" className='icon-item'></svg-icon>
+              <svg-icon v-else-if="passCheck == 0" iconClass="icon-password-wrong" className='icon-item'></svg-icon>
+              <svg-icon v-else iconClass="icon-password-nor" className='icon-item'></svg-icon>
         </span>
           <el-input type="password" placeholder="密码" v-model="form.password" :class="[
               { 'right-mess': form.password || passCheck == 1 },
@@ -55,10 +49,8 @@
           <el-button type="primary" @click="login()">立即登录</el-button>
         </li>
         <li class="login-tips">
-          <i class="icon-tips mr10"></i>“忘记账号/密码、账号被禁用”无法登录的，请联系管理员。
-        </li>
-        <li class="sign-up-tips">
-          <i class="iconfont blog-icon-sign-up-tip mr10"></i><i class="iconfont blog-icon-user mr10"></i>如若还没有账户信息，前往<span class="sign-up" @click="signUp">注册</span>
+          <p><i class="icon-tips mr10"></i>“忘记账号/密码”无法登录的，请联系管理员。</p>
+          <p><i class="icon-tips mr10"></i>如若还没有账户信息，前往<span class="sign-up" @click="signUp">注册</span></p>
         </li>
       </ul>
     </div>
@@ -149,11 +141,11 @@
     position: fixed;
 
     .login-main {
-      border-radius: 50% 0px 50% 0px;
-      width: 658px;
+      border-radius: 50px;
+      width: 558px;
       height: 400px;
-      background:#00000090;
-      box-shadow: 0px 3px 6px 0px rgba(139, 139, 139, 0.5);
+      background:#00000080;
+      box-shadow: 0px 3px 6px 0px rgba(139, 139, 139, 0.2);
       margin: auto;
       position: relative;
       top: 50%;
@@ -193,8 +185,10 @@
       }
 
       li {
-        margin-bottom: 23px;
+        width: 420px;
+        margin: 0px auto 23px;
         position: relative;
+        
 
         .login-icon {
           display: inline-block;
@@ -205,23 +199,11 @@
           margin-right: 11px;
         }
 
-        .icon-user {
+        .icon-item {
           width: 30px;
           height: 30px;
           display: inline-block;
           vertical-align: middle;
-        }
-
-        .icon-user-nor {
-          background: url("~@/assets/images/login/icon-user-nor.svg") no-repeat;
-        }
-
-        .icon-user-sel {
-          background: url("~@/assets/images/login/icon-user-sel.svg") no-repeat;
-        }
-
-        .icon-user-wrong {
-          background: url("~@/assets/images/login/icon-user-wrong.svg") no-repeat;
         }
 
         .icon-password {
@@ -230,38 +212,6 @@
           display: inline-block;
           vertical-align: middle;
         }
-
-        .icon-password-nor {
-          background: url("~@/assets/images/login/icon-password-nor.svg") no-repeat;
-        }
-
-        .icon-password-sel {
-          background: url("~@/assets/images/login/icon-password-sel.svg") no-repeat;
-        }
-
-        .icon-password-wrong {
-          background: url("~@/assets/images/login/icon-password-wrong.svg") no-repeat;
-        }
-
-        .icon-code {
-          width: 30px;
-          height: 30px;
-          display: inline-block;
-          vertical-align: middle;
-        }
-
-        .icon-code-nor {
-          background: url("~@/assets/images/login/icon-code-nor.svg") no-repeat;
-        }
-
-        .icon-code-sel {
-          background: url("~@/assets/images/login/icon-code-sel.svg") no-repeat;
-        }
-
-        .icon-code-wrong {
-          background: url("~@/assets/images/login/icon-code-wrong.svg") no-repeat;
-        }
-
         .el-input {
           width: 334px;
         }
@@ -306,15 +256,15 @@
 
       .login-btn {
         margin-bottom: 30px;
-        padding: 0 44px;
-
+        padding-left: 77px;
         .el-button {
           width: 100%;
           height: 48px !important;
         }
       }
 
-      .login-tips, .sign-up-tips{
+      .login-tips,{
+        text-align:left;
         padding-left: 42px;
         margin-bottom: 10px;
         font-size: 14px;
@@ -330,8 +280,6 @@
           vertical-align: middle;
           background: url("~@/assets/images/login/icon-tips.svg") no-repeat;
         }
-      }
-      .sign-up-tips{
         .sign-up{
           cursor: pointer;
           color:$color-primary;

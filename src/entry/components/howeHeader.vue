@@ -9,7 +9,6 @@
       <!--      头部标签-->
       <div class="header-tab">
         <div class="tab-search-input">
-          <svg-icon iconClass="icon-user" className='mr10'></svg-icon>
           <el-input placeholder="请输入搜索的内容" prefix-icon="el-icon-search" v-model="searchTip">
           </el-input>
         </div>
@@ -24,7 +23,7 @@
       <!-- 用户信息 -->
       <div class="header-user">
         <div class="write-article mr20">
-          <el-button type="primary" round><i class="iconfont blog-icon-user mr10"></i><i class="iconfont blog-icon-write-article mr10"></i>写文章</el-button>
+          <el-button type="primary" round><i class="iconfont blog-icon-write-article mr10"></i>写文章</el-button>
         </div>
 
         <!-- 未登录，及游客展示的 -->
