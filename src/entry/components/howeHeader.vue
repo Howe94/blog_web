@@ -13,11 +13,19 @@
           </el-input>
         </div>
         <div class="tab-content">
-          <ul class="tab-list">
-            <li :class="['tab-item',{'active-item':selectTabId === item.tabId}]" v-for="(item,index) in tabList"
-                :key="index" @click="handelTab(item)">{{item.tabName}}
-            </li>
-          </ul>
+          <div class="tab-list">
+
+
+                <el-dropdown v-for="(item,index) in tabList"
+                             :key="index" @click="handelTab(item)">
+                  <span :class="['tab-item',{'active-item':selectTabId === item.tabId}]">{{item.tabName}}</span>
+                  <el-dropdown-menu slot="dropdown" v-if="item.children && item.children.length>0">
+                    <el-dropdown-item v-for="(itemChildren,i) in item.children" :key="i">{{itemChildren.tabName}}</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+
+
+          </div>
         </div>
       </div>
       <!-- 用户信息 -->
@@ -70,21 +78,28 @@
             tabName: "首页"
           },
           {
-            tabName: "前端",
-            tabId: "1"
-          },
-          {
-            tabName: "后端",
-            tabId: "2"
-          },
-          {
-            tabName: "算法",
-            tabId: "3"
-          },
-          {
-            tabName: "其他",
-            tabId: "4"
+            tabId: '1',
+            tabName: "归档",
+            children: [
+              {
+                tabName: "前端",
+                tabId: "1"
+              },
+              {
+                tabName: "后端",
+                tabId: "2"
+              },
+              {
+                tabName: "算法",
+                tabId: "3"
+              },
+              {
+                tabName: "其他",
+                tabId: "4"
+              }
+            ]
           }
+
         ],
         selectTabId: "0",//默认选中第一个
         userSettingsList: [
@@ -155,11 +170,11 @@
     user-select: none;
 
 
-    box-shadow: 0 2px 5px #0000000f;
+
     position: relative;
     line-height: 28px;
     transition: transform .3s;
-    background: $color-bg;
+
     padding: 10px 20px;
 
     .header-left,
@@ -277,6 +292,11 @@
           }
         }
       }
+    }
+    &:hover{
+      box-shadow: 0 2px 5px #0000000f;
+      background: $color-bg;
+      transition: all .8s ease;
     }
 
 

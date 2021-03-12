@@ -86,6 +86,7 @@
     -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
+    background: url("~@/assets/images/blog-bg.png") center center / cover no-repeat;
 
 
   }
