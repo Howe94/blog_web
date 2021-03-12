@@ -63,7 +63,6 @@ module.exports = {
       return args;
     });
     // svg配置
-    // svg配置
     config.module.rules.delete('svg'); //重点:删除默认配置中处理svg,
     config.module
         .rule('svg-sprite-loader')
@@ -87,6 +86,8 @@ module.exports = {
           name: 'img/[name].[hash:7].[ext]',
           publicPath: assetsPublicPath
         });
+    // 项目中使用引入文件有时候路径比较深，需要使用"../../../xx.js"这种类似的路劲引入，这种方式比较笨，可以使用webpack的别名alias配置来解决。
+    config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js');
   },
   //Webpack
   configureWebpack: config => {
